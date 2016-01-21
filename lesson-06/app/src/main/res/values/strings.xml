@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lesson-06</string>
+    <string name="log_in">Login</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="empty_pasword">Empty password</string>
+    <string name="empty_login">Empty login</string>
+    <string name="signed_in">You entered!!!</string>
+    <string name="signed_up">You signed up!!!</string>
+</resources>
