@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Lesson-07</string>
+
+    <string name="main_hader_text">Training</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="about_text">About</string>
+
+    <string name="back">Back</string>
+    <string name="field_is_empty">Field is empty</string>
+    <string name="incorrect">Incorrect</string>
+
+    <string name="log_in_header">Log In</string>
+    <string name="registration">Registration</string>
+
+    <string name="login">LogIn</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="firs_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="man">Male</string>
+    <string name="woman">Female</string>
+    <string name="other">Other</string>
+    <string name="additional_information">Additional Information</string>
+    <string name="accept_terms">I accept the terms</string>
+    <string name="less_then_four">Enter more then four characters</string>
+    <string name="less_then_eight">Enter more then eight characters</string>
+    <string name="info">Information</string>
+    <string name="sex">Sex</string>
+    
+</resources>
