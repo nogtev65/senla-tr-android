@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defolt_dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.75"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defolt_dp"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:textSize="@dimen/text_size"
+                android:id="@+id/result"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defolt_dp"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:textSize="@dimen/text_size"
+                android:id="@+id/data"/>
+
+        </LinearLayout>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_cancel"
+            android:id="@+id/butt_cancel"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defolt_dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_7"
+            android:id="@+id/butt_7"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_8"
+            android:id="@+id/butt_8"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_9"
+            android:id="@+id/butt_9"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_devide"
+            android:id="@+id/butt_devide"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defolt_dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_4"
+            android:id="@+id/butt_4"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_5"
+            android:id="@+id/butt_5"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_6"
+            android:id="@+id/butt_6"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_multip"
+            android:id="@+id/butt_multip"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defolt_dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_1"
+            android:id="@+id/butt_1"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_2"
+            android:id="@+id/butt_2"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_3"
+            android:id="@+id/butt_3"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_minus"
+            android:id="@+id/butt_minus"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defolt_dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="@string/butt_0"
+            android:id="@+id/butt_0"/>
+
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_eqally"
+            android:id="@+id/butt_eqally"/>
+        <Button
+            android:layout_width="@dimen/defolt_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="@string/butt_plus"
+            android:id="@+id/butt_plus"/>
+    </LinearLayout>
+
+
+    
+</LinearLayout>

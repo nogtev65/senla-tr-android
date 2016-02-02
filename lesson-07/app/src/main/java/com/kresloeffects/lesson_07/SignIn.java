@@ -10,18 +10,32 @@ import android.widget.EditText;
 
 public class SignIn extends AppCompatActivity {
 
+    private EditText editTextLogIn;
+    private EditText editTextPassword;
+    private Button buttonSignIn;
+    private Button buttonBack;
+
+    private String empty;
+    private String incorect;
+
+    private static final String KEY_LOG_IN = "logIn";
+    private static final String KEY_PASSWORD = "password";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        editTextLogIn = (EditText)findViewById(R.id.edit_text_log_in);
+        editTextPassword = (EditText)findViewById(R.id.edit_text_password);
+        buttonSignIn = (Button)findViewById(R.id.button_sign_in);
+        buttonBack = (Button)findViewById(R.id.button_back);
+
+        empty = getString(R.string.field_is_empty);
+        incorect = getString(R.string.incorrect);
+
         final String login = "nogtev65";
         final String password = "21011994";
-
-        final EditText editTextLogIn = (EditText)findViewById(R.id.edit_text_log_in);
-        final EditText editTextPassword = (EditText)findViewById(R.id.edit_text_password);
-        final Button buttonSignIn = (Button)findViewById(R.id.button_sign_in);
-        final Button buttonBack = (Button)findViewById(R.id.button_back);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -30,26 +44,26 @@ public class SignIn extends AppCompatActivity {
                      case R.id.button_sign_in:
                          if(editTextLogIn.getText().toString().equals(login)){
                              if(editTextPassword.getText().toString().equals(password)){
-                                 Intent intent = new Intent(SignIn.this, Info.class);
-                                 intent.putExtra("logIn", editTextLogIn.getText().toString());
-                                 intent.putExtra("password", editTextPassword.getText().toString());
+                                 Intent intent = new Intent(SignIn.this, Info.class)
+                                    .putExtra(KEY_LOG_IN, editTextLogIn.getText().toString())
+                                    .putExtra(KEY_PASSWORD, editTextPassword.getText().toString());
                                  startActivity(intent);
                              }
                              else{
                                  if(editTextPassword.getText().toString().equals("")){
-                                     editTextPassword.setError(getString(R.string.field_is_empty));
+                                     editTextPassword.setError(empty);
                                  }
                                  else{
-                                     editTextPassword.setError(getString(R.string.incorrect));
+                                     editTextPassword.setError(incorect);
                                  }
                              }
                          }
                          else {
                              if(editTextLogIn.getText().toString().equals("")){
-                                 editTextLogIn.setError(getString(R.string.field_is_empty));
+                                 editTextLogIn.setError(empty);
                              }
                              else{
-                                 editTextLogIn.setError(getString(R.string.incorrect));
+                                 editTextLogIn.setError(incorect);
                              }
                          }
                          break;

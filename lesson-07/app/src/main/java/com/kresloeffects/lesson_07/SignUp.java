@@ -13,26 +13,55 @@ import java.util.ArrayList;
 
 public class SignUp extends AppCompatActivity {
 
+    private EditText editTextLogIn;
+    private EditText editTextPassword;
+    private EditText editTextRepeatPassword;
+    private EditText editTextFirstName;
+    private EditText editTextLastName;
+    private EditText editTextMoreInfo;
+
+    private CheckBox checkBox;
+
+    private RadioGroup radioGroup;
+
+    private Button buttonSignUp;
+    private Button buttonBack;
+
+    private String empty;
+    private String incorect;
+    private String less4;
+    private String less8;
+
+    private static final String KEY_LOG_IN = "logIn";
+    private static final String KEY_PASSWORD = "password";
+    private static final String KEY_FIRST_NAME = "logIn";
+    private static final String KEY_LAST_NAME = "password";
+    private static final String KEY_MORE_INFO = "logIn";
+    private static final String KEY_SEX = "password";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        final EditText editTextLogIn = (EditText) findViewById(R.id.edit_text_log_in);
-        final EditText editTextPassword = (EditText) findViewById(R.id.edit_text_password);
-        final EditText editTextRepeatPassword = (EditText)findViewById(R.id.edit_text_repeat_password);
-        final EditText editTextFirstName = (EditText)findViewById(R.id.edit_text_first_name);
-        final EditText editTextLastName = (EditText)findViewById(R.id.edit_text_last_name);
-        final EditText editTextMoreInfo = (EditText)findViewById(R.id.edit_text_more_info);
+        editTextLogIn = (EditText) findViewById(R.id.edit_text_log_in);
+        editTextPassword = (EditText) findViewById(R.id.edit_text_password);
+        editTextRepeatPassword = (EditText)findViewById(R.id.edit_text_repeat_password);
+        editTextFirstName = (EditText)findViewById(R.id.edit_text_first_name);
+        editTextLastName = (EditText)findViewById(R.id.edit_text_last_name);
+        editTextMoreInfo = (EditText)findViewById(R.id.edit_text_more_info);
 
-        final CheckBox checkBox = (CheckBox)findViewById(R.id.check_box_accept);
+        checkBox = (CheckBox)findViewById(R.id.check_box_accept);
 
-        final RadioGroup radioGroup =(RadioGroup)findViewById(R.id.radio_group);
+        radioGroup =(RadioGroup)findViewById(R.id.radio_group);
 
-        final Button buttonSignUp = (Button)findViewById(R.id.button_sign_up);
-        final Button buttonBack = (Button)findViewById(R.id.button_back);
+        buttonSignUp = (Button)findViewById(R.id.button_sign_up);
+        buttonBack = (Button)findViewById(R.id.button_back);
 
-
+        empty = getString(R.string.field_is_empty);
+        incorect = getString(R.string.incorrect);
+        less4 = getString(R.string.less_then_four);
+        less8 = getString(R.string.less_then_eight);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -40,68 +69,82 @@ public class SignUp extends AppCompatActivity {
 
                 boolean allCheck = true;
 
+                String logInText;
+                String passwordText;
+                String repeatPasswordText;
+                String firstNameText;
+                String lastNameText;
+                String moreInfoText;
+
+                logInText = editTextLogIn.getText().toString();
+                passwordText = editTextPassword.getText().toString();
+                repeatPasswordText = editTextRepeatPassword.getText().toString();
+                firstNameText = editTextFirstName.getText().toString();
+                lastNameText = editTextLastName.getText().toString();
+                moreInfoText = editTextMoreInfo.getText().toString();
+
                 switch (view.getId()){
                     case R.id.button_sign_up:
                         allCheck = true;
-                        if(editTextLogIn.getText().toString().equals("")){
-                            editTextLogIn.setError(getString(R.string.field_is_empty));
+                        if(logInText.equals("")){
+                            editTextLogIn.setError(empty);
                             allCheck = false;
                         }
                         else{
-                            if(editTextLogIn.getText().toString().length()<4){
-                                editTextLogIn.setError(getString(R.string.less_then_four));
+                            if(logInText.length()<4){
+                                editTextLogIn.setError(less4);
                                 allCheck = false;
                             }
                         }
 
-                        if(editTextPassword.getText().toString().equals("")){
-                            editTextPassword.setError(getString(R.string.field_is_empty));
+                        if(passwordText.equals("")){
+                            editTextPassword.setError(empty);
                             allCheck = false;
                         }
                         else{
-                            if(editTextPassword.getText().toString().length()<8){
-                                editTextPassword.setError(getString(R.string.less_then_eight));
+                            if(passwordText.length()<8){
+                                editTextPassword.setError(less8);
                                 allCheck = false;
                             }
                         }
 
-                        if(editTextRepeatPassword.getText().toString().equals("")){
-                            editTextRepeatPassword.setError(getString(R.string.field_is_empty));
+                        if(repeatPasswordText.equals("")){
+                            editTextRepeatPassword.setError(empty);
                             allCheck = false;
                         }
                         else{
-                            if(editTextRepeatPassword.getText().toString().equals(editTextPassword.getText().toString())){
+                            if(repeatPasswordText.equals(passwordText)){
 
                             }
                             else{
-                                editTextRepeatPassword.setError(getString(R.string.incorrect));
+                                editTextRepeatPassword.setError(incorect);
                                 allCheck = false;
                             }
                         }
-                        if(editTextFirstName.getText().toString().equals("")) {
-                            editTextFirstName.setError(getString(R.string.field_is_empty));
+                        if(firstNameText.equals("")) {
+                            editTextFirstName.setError(empty);
                             allCheck = false;
                         }
-                        if(editTextLastName.getText().toString().equals("")) {
-                            editTextLastName.setError(getString(R.string.field_is_empty));
+                        if(lastNameText.equals("")) {
+                            editTextLastName.setError(empty);
                             allCheck = false;
                         }
                         if(allCheck){
-                            Intent intent = new Intent(SignUp.this, Info.class);
-                            intent.putExtra("logIn", editTextLogIn.getText().toString());
-                            intent.putExtra("password", editTextPassword.getText().toString());
-                            intent.putExtra("firstName", editTextFirstName.getText().toString());
-                            intent.putExtra("lastName", editTextLastName.getText().toString());
-                            intent.putExtra("moreInfo", editTextMoreInfo.getText().toString());
+                            Intent intent = new Intent(SignUp.this, Info.class)
+                                .putExtra(KEY_LOG_IN, logInText)
+                                .putExtra(KEY_PASSWORD, passwordText)
+                                .putExtra(KEY_FIRST_NAME, firstNameText)
+                                .putExtra(KEY_LAST_NAME, lastNameText)
+                                .putExtra(KEY_MORE_INFO, moreInfoText);
 
                             if(radioGroup.getCheckedRadioButtonId()==R.id.man){
-                                intent.putExtra("sex", getString(R.string.man));
+                                intent.putExtra(KEY_SEX, getString(R.string.man));
                             }
                             if(radioGroup.getCheckedRadioButtonId()==R.id.woman){
-                                intent.putExtra("sex", getString(R.string.woman));
+                                intent.putExtra(KEY_SEX, getString(R.string.woman));
                             }
                             if(radioGroup.getCheckedRadioButtonId()==R.id.other){
-                                intent.putExtra("sex", getString(R.string.other));
+                                intent.putExtra(KEY_SEX, getString(R.string.other));
                             }
 
                             startActivity(intent);
@@ -111,12 +154,7 @@ public class SignUp extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.check_box_accept:
-                        if(checkBox.isChecked()){
-                            buttonSignUp.setEnabled(true);
-                        }
-                        else{
-                            buttonSignUp.setEnabled(false);
-                        }
+                        buttonSignUp.setEnabled(checkBox.isChecked());
                 }
 
             }

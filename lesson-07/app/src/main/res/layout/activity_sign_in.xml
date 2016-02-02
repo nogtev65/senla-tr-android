@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_padding"
-    tools:context="com.kresloeffects.lesson_07.SignIn"
-    android:layout_margin="@dimen/margin">
+    android:padding="@dimen/margin"
+    android:fillViewport="true"
+    tools:context="com.kresloeffects.lesson_07.SignIn">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_centerInParent="true">
+        android:gravity="center">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_padding"
+            android:layout_weight="0.5"></View>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,16 +33,20 @@
             android:id="@+id/edit_text_password"
             android:singleLine="true"
             android:inputType="textPassword"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_padding"
+            android:layout_weight="0.5"></View>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sign_in"
             android:id="@+id/button_sign_in"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:id="@+id/button_back"/>
     </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/back"
-        android:id="@+id/button_back"/>
-</RelativeLayout>
+
+</ScrollView>

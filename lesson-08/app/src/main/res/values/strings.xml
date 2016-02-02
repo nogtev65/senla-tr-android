@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Lesson-08</string>
+    <string name="butt_1">1</string>
+    <string name="butt_2">2</string>
+    <string name="butt_3">3</string>
+    <string name="butt_4">4</string>
+    <string name="butt_5">5</string>
+    <string name="butt_6">6</string>
+    <string name="butt_7">7</string>
+    <string name="butt_8">8</string>
+    <string name="butt_9">9</string>
+    <string name="butt_0">0</string>
+    <string name="butt_plus">+</string>
+    <string name="butt_minus">-</string>
+    <string name="butt_multip">*</string>
+    <string name="butt_devide">/</string>
+    <string name="butt_cancel">C</string>
+    <string name="butt_eqally">=</string>
+    <string name="error">ERROR</string>
+</resources>

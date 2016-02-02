@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_padding"
+    android:fillViewport="true"
     tools:context="com.kresloeffects.lesson_07.SignUp">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,6 +87,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/accept_terms"
                 android:id="@+id/check_box_accept"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_padding"
+                android:layout_weight="0.5"></View>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,5 +103,5 @@
                 android:text="@string/back"
                 android:id="@id/button_back"/>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+</ScrollView>
